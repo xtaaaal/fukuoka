@@ -1,0 +1,106 @@
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexVstart {
+  align-content: flex-start;
+  -webkit-align-content: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flexVcenter {
+  align-content: center;
+  -webkit-align-content: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+@mixin flexVEnd {
+  align-content: flex-end;
+  -webkit-align-content: flex-end;
+  -webkit-box-align: flex-end;
+  -moz-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  -webkit-align-items: flex-end;
+  -ms-align-items: flex-end;
+  align-items: flex-end;
+}
+
+@mixin flexJustifyCenter {
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+@mixin flexWrap {
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+}
+
+@mixin flexDirectionColumn {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin flexDirectionReverse {
+  -webkit-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+@mixin flexDirectionColReverse {
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+@mixin flexSpaceBetween {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+@mixin flexSpaceEvenly {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-evenly;
+  justify-content: space-evenly;
+}
+
+@mixin flexSpaceAround {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+@mixin flexJustifyEnd {
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+}
+
+@mixin flexJustifyStart {
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+}

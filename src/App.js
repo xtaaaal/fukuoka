@@ -1,26 +1,58 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { withRouter } from 'react-router';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Timeline from './components/Timeline';
+import Grids from './components/Grids';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export var app = null;
 
-export default App;
+export const App = withRouter(
+  class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        ready: false,
+        pageTitle: '',
+        page: ''
+      };
+
+      // expose app instance
+      app = this;
+    }
+
+    componentDidMount() {}
+
+    componentWillUnmount() {}
+
+    componentDidUpdate(prevProps, prevState) {}
+
+    componentWillReceiveProps(newProps) {
+      const { pathname: oldPathname } = this.props.location;
+      const { pathname: newPathname, search } = newProps.location;
+    }
+
+    render() {
+      return (
+        <div id="app-root">
+          <div id="app-main" className="app-main">
+            <div className="wrapper">
+              <h1 className="center">福岡・長崎行程計画</h1>
+
+              <Grids />
+              <Timeline />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    redirect(path) {
+      this.props.history.push(path);
+    }
+
+    setPageTitle(pageTitle) {
+      this.setState({ pageTitle });
+      document.title = pageTitle;
+    }
+  }
+);
